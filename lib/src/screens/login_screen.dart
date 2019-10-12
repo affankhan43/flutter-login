@@ -13,20 +13,35 @@ class LoginScreenState extends State<LoginScreen> {
       child: Form(
         child: Column(
           children: [
-
+            emailField(),
+            pwdField(),
+            //submitButton()
           ],
         ),
       ),
     );
   }
 
-  emailField() {
-
+  Widget emailField() {
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      decoration: InputDecoration(
+        labelText: 'Email Address',
+        icon: Icon(Icons.email),
+        hintText: 'Enter Email', 
+      ),
+    );
   }
-  pwdField() {
-
+  Widget pwdField() {
+    return TextFormField(
+      decoration: InputDecoration(
+        labelText: 'Password',
+        icon: Icon(Icons.vpn_key),
+        hintText: 'Enter Password', 
+      ),
+    );
   }
-  submitButton() {
+  Widget submitButton() {
 
   }
 }
