@@ -14,6 +14,7 @@ class LoginScreenState extends State<LoginScreen> {
         child: Column(
           children: [
             emailField(),
+            Container(margin: EdgeInsets.only(top: 15.0),),
             pwdField(),
             Container(margin: EdgeInsets.only(top: 30.0),),
             submitButton()
