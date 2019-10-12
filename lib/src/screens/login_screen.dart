@@ -15,7 +15,7 @@ class LoginScreenState extends State<LoginScreen> {
           children: [
             emailField(),
             pwdField(),
-            //submitButton()
+            submitButton()
           ],
         ),
       ),
@@ -34,6 +34,7 @@ class LoginScreenState extends State<LoginScreen> {
   }
   Widget pwdField() {
     return TextFormField(
+      obscureText: true,
       decoration: InputDecoration(
         labelText: 'Password',
         icon: Icon(Icons.vpn_key),
@@ -42,6 +43,9 @@ class LoginScreenState extends State<LoginScreen> {
     );
   }
   Widget submitButton() {
-
+    return RaisedButton(
+      onPressed: (){},
+      child: Text('Login Now!'),
+    );
   }
 }
