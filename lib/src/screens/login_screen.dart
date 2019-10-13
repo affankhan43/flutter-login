@@ -35,6 +35,14 @@ class LoginScreenState extends State<LoginScreen> {
         icon: Icon(Icons.email),
         hintText: 'Enter Email', 
       ),
+      validator: (String value){
+        if(!value.contains('@')){
+          return 'Invalid Email';
+        }
+      },
+      onSaved: (String value){
+        print(value);
+      },
     );
   }
   Widget pwdField() {
@@ -45,12 +53,22 @@ class LoginScreenState extends State<LoginScreen> {
         icon: Icon(Icons.vpn_key),
         hintText: 'Enter Password', 
       ),
+      validator: (String value){
+        if(value.length < 4){
+          return 'Password Length Must be upto 4 charachters';
+        }
+      },
+      onSaved: (String value){
+        print(value);
+      },
     );
   }
   Widget submitButton() {
     return RaisedButton(
       onPressed: (){
-        formKey.currentState.reset();
+        if(formKey.currentState.validate ()){
+          formKey.currentState.save();
+        }
       },
       //color: Colors.blue,
       child: Text('Login Now!'),
